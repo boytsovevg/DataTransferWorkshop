@@ -1,15 +1,15 @@
 import * as faker from 'faker';
 import { GenderType } from '../../../components/person/enums/gender.type';
-import { PatientDto } from '../data/dto/patient.dto';
 import { getRandom } from '../../../services/random.service';
+import { PractitionerDto } from '../data/dto/practitioner.dto';
 
-export const createPatient = (gender: GenderType): PatientDto => {
+export const createPractitioner = (gender: GenderType): PractitionerDto => {
     return {
-        id: faker.random.uuid(),
+        id: faker.random.number(),
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
-        birthDate: faker.date.past(getRandom(70)).toJSON(),
+        date: faker.date.past(getRandom(70)).toJSON(),
         gender,
-        practitionerIds: [],
+        specialties: [],
     };
 };

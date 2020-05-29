@@ -1,4 +1,7 @@
-<div *ngFor="let practitioner of practitionerPreviews$ | async">
+<div
+  class="practitioner"
+  *ngFor="let practitioner of practitionerPreviews$ | async"
+>
   <my-person
     [person]="practitioner"
   >

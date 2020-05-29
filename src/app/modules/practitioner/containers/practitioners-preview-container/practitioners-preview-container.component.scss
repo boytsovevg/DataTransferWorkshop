@@ -1,0 +1,10 @@
+.practitioner {
+  margin-top: 5px;
+  padding: 5px;
+  border: 1px solid #1267B1;
+  border-radius: 5px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
