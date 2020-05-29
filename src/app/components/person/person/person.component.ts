@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { PersonModel } from '../models/person.model';
 
 @Component({
     selector: 'my-person',
@@ -6,8 +7,11 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
     styleUrls: ['./person.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PersonComponent implements OnInit {
-    constructor() {}
+export class PersonComponent {
+    @Input() public person: PersonModel;
+    @Output() public personDelete = new EventEmitter<{ id: string }>();
 
-    ngOnInit(): void {}
+    public handlePersonDeleteClick(id: string): void {
+        this.personDelete.emit({ id });
+    }
 }

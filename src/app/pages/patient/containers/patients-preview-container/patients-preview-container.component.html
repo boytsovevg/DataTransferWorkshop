@@ -1,0 +1,9 @@
+<div
+  *ngFor="let patient of patients$ | async"
+  class="patient"
+>
+  <my-person
+    [person]="patient"
+  >
+  </my-person>
+</div>

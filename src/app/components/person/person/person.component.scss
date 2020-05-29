@@ -3,7 +3,6 @@ $green: #006A4E;
 .person {
   display: flex;
   align-items: center;
-  min-width: 400px;
   font-family: Arial, sans-serif;
 
   &__avatar {
@@ -22,7 +21,12 @@ $green: #006A4E;
 
   &__fullName {
     font-size: 18px;
+    letter-spacing: 1px;
     text-transform: uppercase;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 

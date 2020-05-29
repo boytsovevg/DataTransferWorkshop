@@ -1,0 +1,6 @@
+<ng-container *ngIf="patientPreview$ | async as person">
+  <my-person
+    [person]="person"
+  >
+  </my-person>
+</ng-container>

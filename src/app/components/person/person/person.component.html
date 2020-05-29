@@ -1,11 +1,16 @@
 <div class="person">
   <div class="person__avatar"></div>
   <div class="person__description">
-    <div class="person__fullName">Бойцов Е.С</div>
+    <div
+      [title]="person.fullName"
+      class="person__fullName"
+    >
+      {{ person.fullName }}
+    </div>
     <div class="person-info">
-      <span class="person-info__age">27 лет</span>
+      <span class="person-info__age">{{ person.age }}</span>
       <span class="divider">|</span>
-      <span class="person-info__gender">M</span>
+      <span class="person-info__gender">{{ person.gender }}</span>
     </div>
   </div>
 </div>
