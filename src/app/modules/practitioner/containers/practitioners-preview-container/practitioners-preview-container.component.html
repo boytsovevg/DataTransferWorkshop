@@ -1,0 +1,6 @@
+<div *ngFor="let practitioner of practitionerPreviews$ | async">
+  <my-person
+    [person]="practitioner"
+  >
+  </my-person>
+</div>

@@ -5,11 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { patientsFeatureName, PatientsState } from './pages/patient/store/patients-store.module';
-import { PatientModule } from './pages/patient/patient.module';
+import { patientsFeatureName, PatientsState } from './modules/patient/store/patients-store.module';
+import { PatientModule } from './modules/patient/patient.module';
+import {
+    practitionersFeatureName,
+    PractitionersState,
+} from './modules/practitioner/store/practitioners-store.module';
+import { PractitionerModule } from './modules/practitioner/practitioner.module';
 
 export interface AppState {
     [patientsFeatureName]: PatientsState;
+    [practitionersFeatureName]: PractitionersState;
 }
 
 @NgModule({
@@ -17,9 +23,10 @@ export interface AppState {
     imports: [
         BrowserModule,
         AppRoutingModule,
-        PatientModule,
         StoreModule.forRoot({}, {}),
         EffectsModule.forRoot(),
+        PatientModule,
+        PractitionerModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
