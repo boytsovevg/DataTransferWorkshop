@@ -1,5 +1,7 @@
 <div class="person">
-  <div class="person__avatar"></div>
+  <div class="person__avatar">
+    {{ getFirstLetters(person.fullName) }}
+  </div>
   <div class="person__description">
     <div
       [title]="person.fullName"

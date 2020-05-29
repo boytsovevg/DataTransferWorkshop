@@ -14,4 +14,11 @@ export class PersonComponent {
     public handlePersonDeleteClick(id: string): void {
         this.personDelete.emit({ id });
     }
+
+    public getFirstLetters(fullName: string): string {
+        return fullName
+            .split(' ')
+            .map(word => word[0])
+            .join('');
+    }
 }

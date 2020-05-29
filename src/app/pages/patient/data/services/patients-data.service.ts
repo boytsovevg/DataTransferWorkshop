@@ -1,24 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { PatientDto } from '../dto/patient.dto';
-import * as faker from 'faker';
 
 import { GenderType } from '../../../../components/person/enums/gender.type';
-
-const getRandom = (to: number): number => {
-    return Math.floor(Math.random() * (to - 1));
-};
-
-const createPatient = (gender: GenderType): PatientDto => {
-    return {
-        id: faker.random.uuid(),
-        firstName: faker.name.firstName(),
-        lastName: faker.name.lastName(),
-        birthDate: faker.date.past(getRandom(70)).toJSON(),
-        gender,
-        practitionerIds: [],
-    };
-};
+import { createPatient } from '../../services/patients.service';
 
 const patientsData: PatientDto[] = [
     createPatient(GenderType.Male),
@@ -26,6 +11,7 @@ const patientsData: PatientDto[] = [
     createPatient(GenderType.Female),
     createPatient(GenderType.Unknown),
     createPatient(GenderType.Male),
+    createPatient(GenderType.Female),
 ];
 
 @Injectable()

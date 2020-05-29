@@ -6,11 +6,16 @@ $green: #006A4E;
   font-family: Arial, sans-serif;
 
   &__avatar {
-    border: 1px solid #ccc;
-    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
     width: 50px;
     height: 50px;
     background-color: $green;
+    letter-spacing: 1px;
+    font-size: 20px;
+    color: #fff;
   }
 
   &__description {
